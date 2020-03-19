@@ -74,7 +74,13 @@ export default class App extends Component {
   }
 
   authorizedPages() {
-    return [<Route path="/portfolio-manager" component={PortfolioManager} />];
+    return [
+      <Route
+        key="portfolio-manager"
+        path="/portfolio-manager"
+        component={PortfolioManager}
+      />
+    ];
   }
 
   render() {
@@ -86,7 +92,7 @@ export default class App extends Component {
               loggedInStatus={this.state.loggedInStatus}
               handleSuccessfulLogout={this.handleSuccessfulLogout}
             />
-
+            <h1>{this.state.loggedInStatus}</h1>
             <Switch>
               <Route exact path="/" component={Home} />
 
